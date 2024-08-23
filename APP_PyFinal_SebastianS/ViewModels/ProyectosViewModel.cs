@@ -11,8 +11,9 @@ namespace APP_PyFinal_SebastianS.ViewModels
     {
         public Proyecto MyProyecto { get; set; }
 
-        public ProyectosViewModel() { 
-        MyProyecto = new Proyecto();
+        public ProyectosViewModel()
+        {
+            MyProyecto = new Proyecto();
         }
 
         //Funcion que carga los proyectos para mostrar en la tableview
@@ -90,9 +91,12 @@ namespace APP_PyFinal_SebastianS.ViewModels
             }
         }
 
-        public async Task<bool> VmModificarProyectoAsync(int proyectoId, string pNombre,
-                                                 string pDescripcion, DateOnly pFechaInicio,
-                                                 DateOnly pFechaFin, string pEstado)
+        public async Task<bool> VmModificarProyectoAsync(int proyectoId,
+                                                         string pNombre,
+                                                         string pDescripcion,
+                                                         DateOnly pFechaInicio,
+                                                         DateOnly pFechaFin,
+                                                         string pEstado)
         {
             if (IsBusy) return false;
             IsBusy = true;

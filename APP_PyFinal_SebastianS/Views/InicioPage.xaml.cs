@@ -16,4 +16,24 @@ public partial class InicioPage : ContentPage
     {
         await Navigation.PushAsync(new ListaMiembrosPage());
     }
+
+    private void btnRoles_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void btnTareas_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void btnComentarios_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void btnMiembrosTarea_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }

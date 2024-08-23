@@ -90,11 +90,11 @@ namespace APP_PyFinal_SebastianS.ViewModels
         }
 
         public async Task<bool> VmModificarMiembroAsync(int miembroId,
-            int pRolId,
-            string pNombre,
-                                              string pApellidos,
-                                              string pEmail,
-                                              int pTelefono)
+                                                        int pRolId,
+                                                        string pNombre,
+                                                        string pApellidos,
+                                                        string pEmail,
+                                                        int pTelefono)
         {
             if (IsBusy) return false;
             IsBusy = true;
@@ -109,6 +109,7 @@ namespace APP_PyFinal_SebastianS.ViewModels
                     Apellidos = pApellidos,
                     Email = pEmail,
                     Telefono = pTelefono
+
                 };
 
                 bool resultado = await miembro.ModificarMiembroAsync(miembro);

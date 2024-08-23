@@ -15,7 +15,7 @@ public partial class ModificarMiembroPage : ContentPage
         BindingContext = vm = new MiembrosViewModel();
 
         MiembroId = miembroId;
-        
+        BuscarProyectobyId(miembroId);
 	}
 
     private async void btnGuardar_Clicked(object sender, EventArgs e) 

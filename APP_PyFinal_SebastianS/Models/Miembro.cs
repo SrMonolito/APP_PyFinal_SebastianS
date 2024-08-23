@@ -153,7 +153,7 @@ namespace APP_PyFinal_SebastianS.Models
             try
             {
                 // Usa string.Format para construir la URL
-                string RouteSufix = string.Format("TblProyectos/{0}", miembro.MiembroId);
+                string RouteSufix = string.Format("TblMiembroes/{0}", miembro.MiembroId);
                 string URL = Services.WebAPIConnection.BaseURL + RouteSufix;
 
                 RestClient client = new RestClient(URL);

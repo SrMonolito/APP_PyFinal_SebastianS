@@ -12,7 +12,7 @@ public partial class GuardarProyectoPage : ContentPage
 
     private async void btnCancelar_Clicked(object sender, EventArgs e)
     {
-		await Navigation.PopAsync();
+        await Navigation.PopAsync();
     }
 
     private async void btnGuardar_Clicked(object sender, EventArgs e)
