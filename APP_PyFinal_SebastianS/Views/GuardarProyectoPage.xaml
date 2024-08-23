@@ -13,14 +13,14 @@
         
         <Editor x:Name="TxtDescripcion" Placeholder="Ingrese la Descripcion del Proyecto"/>
         
-        <Label Text="Fecha de Inicio"></Label>
-        <DatePicker x:Name="DpFechaInicio"/>
-        
-        <Label Text="Fecha de Finalizacion"></Label>
-        <DatePicker x:Name="DpFechaFin" />
-        
-        <Label Text="Estado"/>
-        <Switch x:Name="SwEstado" IsToggled="false" />
+        <Label Text="Fecha de Inicio" TextColor="Gray"></Label>
+        <DatePicker x:Name="DpFechaInicio" TextColor="Gray"/>
+
+        <Label Text="Fecha de Finalizacion" TextColor="Gray"></Label>
+        <DatePicker x:Name="DpFechaFin" TextColor="Gray"/>
+
+        <Label Text="Estado" TextColor="Gray"/>
+        <Switch x:Name="SwEstado" IsToggled="false"/>
         
         <Grid>
             <Grid.RowDefinitions>

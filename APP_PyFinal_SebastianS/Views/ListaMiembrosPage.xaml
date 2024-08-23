@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="APP_PyFinal_SebastianS.Views.ListaProyectosPage"
-             Title="Proyectos"
+             x:Class="APP_PyFinal_SebastianS.Views.ListaMiembrosPage"
+             Title="Lista de Miembros"
              BackgroundImageSource="appbackground"
              >
-    
     <VerticalStackLayout Padding="20,20,20,0" VerticalOptions="StartAndExpand">
-        <Entry x:Name="TxtBuscar" Placeholder="Ingrese el id del Proyecto" 
-               Keyboard="Numeric" TextColor="Black"/>
+        
+        <Entry x:Name="TxtBuscar" Placeholder="Ingrese el id del Miembro" 
+       Keyboard="Numeric" TextColor="Black"/>
+        
         <Grid >
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -19,22 +20,21 @@
                 <ColumnDefinition Width="120"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="BtnBuscar" Text="Buscar" Margin="0,20,2,20" Clicked="BtnBuscar_Clicked"></Button>
-            <Button x:Name="BtnAddProject" Text="Añadir" Clicked="BtnAddProject_Clicked"
-                    Grid.Column="1" Margin="20,20,0,20"></Button>
-            
+            <Button x:Name="BtnAddMiembro" Text="Añadir" Clicked="BtnAddMiembro_Clicked"
+            Grid.Column="1" Margin="20,20,0,20"></Button>
+
         </Grid>
 
+        <Label Text="Miembros" TextColor="Black"/>
 
-        <Label Text="Proyectos" TextColor="Black"/>
-
-        <ListView x:Name="ProyectosListView" ItemSelected="ProyectosListView_ItemSelected">
+        <ListView x:Name="MiembrosListView" ItemSelected="MiembrosListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Nombre}" Detail="{Binding  FechaFin}" TextColor="Black" DetailColor="Black"/>
+                    <TextCell Text="{Binding Nombre}" TextColor="Black" Detail="{Binding Email}" DetailColor="Black"></TextCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
-
+        
+        
     </VerticalStackLayout>
 </ContentPage>

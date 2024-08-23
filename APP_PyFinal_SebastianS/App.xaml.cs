@@ -8,7 +8,7 @@ namespace APP_PyFinal_SebastianS
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new ListaProyectosPage());
+            MainPage = new NavigationPage(new InicioPage());
         }
     }
 }

@@ -21,7 +21,7 @@
         <DatePicker x:Name="DpFechaFin" />
 
         <Label Text="Estado"/>
-        <Switch IsToggled="false" />
+        <Switch x:Name="SwEstado" IsToggled="false" />
 
         <Grid>
             <Grid.RowDefinitions>
@@ -32,7 +32,7 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnGuardar" Text="Guardar" Margin="20"/>
+            <Button x:Name="btnGuardar" Text="Guardar" Margin="20" Clicked="btnGuardar_Clicked"/>
             <Button x:Name="btnCancelar" Text="Cancelar" Grid.Column="1" Margin="20" Clicked="btnCancelar_Clicked"/>
         </Grid>
 

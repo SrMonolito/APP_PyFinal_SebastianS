@@ -8,16 +8,23 @@ public partial class ListaProyectosPage : ContentPage
 
 	ProyectosViewModel? vm;
 
-	public ListaProyectosPage()
+	public ListaProyectosPage(int proyectoId)
 	{
 		InitializeComponent();
 
 		BindingContext = vm = new ProyectosViewModel();
 
 		LoadProyectosList();
-	}
 
-	private async void LoadProyectosList()
+
+    }
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        LoadProyectosList();
+    }
+        
+    private async void LoadProyectosList()
 	{
         if (vm != null)
         {
@@ -50,5 +57,36 @@ public partial class ListaProyectosPage : ContentPage
     private void BtnBuscar_Clicked(object sender, EventArgs e)
     {
 
+
+        if (TxtBuscar.Text != "" && TxtBuscar.Text != null)
+        {
+            int proyectoId = Int32.Parse(TxtBuscar.Text);
+            if (proyectoId != 0)
+            {
+                buscarProyecto(proyectoId);
+            }
+            else
+            {
+                LoadProyectosList();
+            }
+            
+        }
+        else
+        {
+            LoadProyectosList();
+        }
+        
+    }
+    public async void buscarProyecto(int proyectoId)
+    {
+        if (vm != null)
+        {
+            var proyectos = await vm.VmBuscarProyectoByIdAsync(proyectoId);
+
+            if (proyectos != null)
+            {
+                ProyectosListView.ItemsSource = new List<Proyecto> { proyectos };
+            }
+        }
     }
 }

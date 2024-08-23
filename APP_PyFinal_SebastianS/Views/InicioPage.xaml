@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_PyFinal_SebastianS.Views.InicioPage"
+             BackgroundImageSource="appbackground"
+             IconImageSource="logoartify"
+             >
+    <VerticalStackLayout Padding="20,20,20,0" VerticalOptions="StartAndExpand">
+
+        <Image x:Name="ImgLogo" Source="logoartify" Margin="0,0,0,50"></Image>
+
+        <Button x:Name="btnProyectos" Clicked="btnProyectos_Clicked" Text="Proyectos"
+                Margin="0,20,0,20"
+                />
+
+        <Button x:Name="btnMiembros" Clicked="btnMiembros_Clicked" Text="Miembros" 
+                Margin="0,20,0,0"
+                />
+    </VerticalStackLayout>
+</ContentPage>

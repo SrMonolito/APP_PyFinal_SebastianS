@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using APP_PyFinal_SebastianS.Models;
+
 namespace APP_PyFinal_SebastianS.ViewModels
 {
     public class ProyectosViewModel : BaseViewModel
@@ -63,6 +64,65 @@ namespace APP_PyFinal_SebastianS.ViewModels
             }
             finally { IsBusy = false; }
         }
+
+        public async Task<Proyecto?> VmBuscarProyectoByIdAsync(int proyectoId)
+        {
+            if (IsBusy) return null;
+            IsBusy = true;
+
+            try
+            {
+                Proyecto? proyecto = await MyProyecto.BuscarProyectoByIdAsync(proyectoId);
+                if (proyecto != null)
+                {
+                    MyProyecto = proyecto;
+                }
+                return proyecto;
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        public async Task<bool> VmModificarProyectoAsync(int proyectoId, string pNombre,
+                                                 string pDescripcion, DateOnly pFechaInicio,
+                                                 DateOnly pFechaFin, string pEstado)
+        {
+            if (IsBusy) return false;
+            IsBusy = true;
+
+            try
+            {
+                Proyecto proyecto = new Proyecto
+                {
+                    ProyectoId = proyectoId,
+                    Nombre = pNombre,
+                    Descripcion = pDescripcion,
+                    FechaInicio = pFechaInicio,
+                    FechaFin = pFechaFin,
+                    Estado = pEstado
+                };
+
+                bool resultado = await proyecto.ModificarProyectoAsync(proyecto);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
 
     }
 }
