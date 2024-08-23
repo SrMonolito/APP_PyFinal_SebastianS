@@ -17,23 +17,23 @@
                 <ColumnDefinition Width="100" />
                 <ColumnDefinition Width="120"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="BtnBuscar" Text="Buscar" Margin="0,20,2,20"></Button>
+            <Button x:Name="BtnBuscar" Text="Buscar" Margin="0,20,2,20" Clicked="BtnBuscar_Clicked"></Button>
             <Button x:Name="BtnAddProject" Text="Añadir" Clicked="BtnAddProject_Clicked"
                     Grid.Column="1" Margin="20,20,0,20"></Button>
             
         </Grid>
-        
-        
-        <TableView>
-            <TableRoot>
-                <TableSection Title="Nombre">
-                    <TextCell x:Name="TxtNombreProyecto" Text="Proyecto 1" Detail="Fecha Fin"/>
-                    
-                </TableSection>
-                
-            </TableRoot>
-        </TableView>
-        
+
+
+        <Label Text="Proyectos" TextColor="Black"/>
+
+        <ListView x:Name="ProyectosListView" ItemSelected="ProyectosListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nombre}" Detail="{Binding FechaFin}" TextColor="Black" DetailColor="Black"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
 
     </VerticalStackLayout>
 </ContentPage>

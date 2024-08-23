@@ -2,10 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APP_PyFinal_SebastianS.Views.ModificarProyectoPage"
-             Title="ModificarProyectoPage"
+             Title="Proyecto"
              BackgroundImageSource="appbackground"
              >
     <VerticalStackLayout Padding="20,20,20,0" VerticalOptions="StartAndExpand">
+
+        <Label Text="Identificador del Proyecto" TextColor="Black"/>
+        <Entry x:Name="TxtIdProyecto" IsReadOnly="True"/>
 
         <Entry x:Name="TxtNombre" Placeholder="Ingrese el Nombre del Proyecto"/>
 

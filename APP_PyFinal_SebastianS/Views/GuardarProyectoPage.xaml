@@ -20,7 +20,7 @@
         <DatePicker x:Name="DpFechaFin" />
         
         <Label Text="Estado"/>
-        <Switch IsToggled="false" />
+        <Switch x:Name="SwEstado" IsToggled="false" />
         
         <Grid>
             <Grid.RowDefinitions>
