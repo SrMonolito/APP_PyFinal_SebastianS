@@ -2,11 +2,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APP_PyFinal_SebastianS.Views.ModificarMiembroPage"
-             Title="ModificarMiembroPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             Title="Modificar Miembro"
+             BackgroundImageSource="appbackground"
+             >
+    <VerticalStackLayout  Padding="20,20,20,0" VerticalOptions="StartAndExpand">
+
+        <Label Text="Identificador del Miembro" TextColor="Black"></Label>
+        <Entry x:Name="TxtIdMiembro" TextColor="Black" IsReadOnly="True"/>
+
+        <Label Text="Identificador del Rol" TextColor="Black"/>
+        <Entry x:Name="TxtIdRol" TextColor="Black" Keyboard="Numeric" Placeholder="Ingrese el Identificador del rol"/>
+
+        <Entry x:Name="TxtNombre" TextColor="Black" Placeholder="Ingrese el nombre del Miembro"/>
+
+        <Entry x:Name="TxtApellido" TextColor="Black" Placeholder="Ingrese los apellidos del Miembro"/>
+
+        <Entry x:Name="TxtEmail" TextColor="Black" Keyboard="Email" Placeholder="Ingrese el Email del Miembro"/>
+
+        <Entry x:Name="TxtTelefono" TextColor="Black" Keyboard="Telephone" 
+               Placeholder="Ingrese el numero de Telefono del Miembro"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnGuardar" Text="Guardar" Margin="20" Clicked="btnGuardar_Clicked"/>
+            <Button x:Name="btnCancelar" Text="Cancelar" Grid.Column="1" Margin="20" Clicked="btnCancelar_Clicked"/>
+        </Grid>
+
     </VerticalStackLayout>
 </ContentPage>

@@ -85,7 +85,7 @@ public partial class ModificarProyectoPage : ContentPage
         else
         {
 
-            await DisplayAlert(":)", "Proyecto añadido Exitosamente", "Ok");
+            await DisplayAlert(":)", "Proyecto modificado Exitosamente", "Ok");
             await Navigation.PopAsync();
         }
 
