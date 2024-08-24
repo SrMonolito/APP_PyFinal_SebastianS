@@ -1,26 +1,20 @@
 using APP_PyFinal_SebastianS.ViewModels;
 namespace APP_PyFinal_SebastianS.Views;
 
-public partial class GuardarProyectoPage : ContentPage
+public partial class GuardarTareaPage : ContentPage
 {
-    ProyectosViewModel? vm;
-    public GuardarProyectoPage()
+	TareasViewModel vm;
+	public GuardarTareaPage()
 	{
 		InitializeComponent();
-
-        BindingContext = vm = new ProyectosViewModel();
-    }
-
-    private async void btnCancelar_Clicked(object sender, EventArgs e)
-    {
-        await Navigation.PopAsync();
-    }
+		BindingContext = vm = new TareasViewModel();
+	}
 
     private async void btnGuardar_Clicked(object sender, EventArgs e)
     {
-       string gEstado;
-       bool Estado = SwEstado.IsToggled;
-        if (Estado == true) 
+        string gEstado;
+        bool Estado = SwEstado.IsToggled;
+        if (Estado == true)
         {
             gEstado = "A";
         }
@@ -29,20 +23,26 @@ public partial class GuardarProyectoPage : ContentPage
             gEstado = "I";
         }
 
-        bool R = await vm.VmAddProyecto(TxtNombre.Text,
+        bool R = await vm.VmAddTarea(Int32.Parse(TxtIdProyecto.Text),
+                                        TxtNombre.Text,
                                         TxtDescripcion.Text,
                                         DateOnly.FromDateTime(DpFechaFin.Date),
                                         DateOnly.FromDateTime(DpFechaInicio.Date),
                                         gEstado
             );
-        if (R) 
+        if (R)
         {
-            await DisplayAlert(":)", "Proyecto añadido Exitosamente", "Ok");
+            await DisplayAlert(":)", "Tarea añadido Exitosamente", "Ok");
             await Navigation.PopAsync();
         }
         else
         {
-            await DisplayAlert(":(","Error","OK");
+            await DisplayAlert(":(", "Error", "OK");
         }
+    }
+
+    private async void btnCancelar_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
     }
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_PyFinal_SebastianS.Views.GuardarRolPage"
+             Title="Guardar Rol"
+             BackgroundImageSource="appbackground">
+    <VerticalStackLayout>
+
+        <Entry x:Name="TxtNombre" TextColor="Black" Placeholder="Ingrese el nombre del Rol"/>
+
+        <Entry x:Name="TxtDescripcion" TextColor="Black" Placeholder="Imgrese la Descripcion del Rol"/>
+
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnGuardar" Text="Guardar" Margin="20" Clicked="btnGuardar_Clicked"/>
+            <Button x:Name="btnCancelar" Text="Cancelar" Grid.Column="1" Margin="20" Clicked="btnCancelar_Clicked"/>
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>

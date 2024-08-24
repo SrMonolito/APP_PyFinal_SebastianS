@@ -1,30 +1,26 @@
 using APP_PyFinal_SebastianS.ViewModels;
-
 namespace APP_PyFinal_SebastianS.Views;
 
-public partial class GuardarMiembroPage : ContentPage
+public partial class GuardarRolPage : ContentPage
 {
-    MiembrosViewModel vm;
-	public GuardarMiembroPage()
+    RolViewModel vm;
+    public GuardarRolPage()
 	{
 		InitializeComponent();
 
-        BindingContext = vm = new MiembrosViewModel();
-	}
+        BindingContext = vm = new RolViewModel();
+    }
 
     private async void btnGuardar_Clicked(object sender, EventArgs e)
     {
 
-        bool R = await vm.VmAddMiembro(
-            Int32.Parse(TxtIdRol.Text),
+        bool R = await vm.VmAddRol(
             TxtNombre.Text,
-            TxtApellido.Text,
-            TxtEmail.Text,
-            Int32.Parse(TxtTelefono.Text)
+            TxtDescripcion.Text
             );
         if (R)
         {
-            await DisplayAlert(":)", "Miembro añadido Exitosamente", "Ok");
+            await DisplayAlert(":)", "Rol añadido Exitosamente", "Ok");
             await Navigation.PopAsync();
         }
         else

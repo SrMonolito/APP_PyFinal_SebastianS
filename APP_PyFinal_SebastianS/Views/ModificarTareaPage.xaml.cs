@@ -3,21 +3,18 @@ using APP_PyFinal_SebastianS.ViewModels;
 
 namespace APP_PyFinal_SebastianS.Views;
 
-public partial class ModificarProyectoPage : ContentPage
+public partial class ModificarTareaPage : ContentPage
 {
-    ProyectosViewModel? vm;
-    public int ProyectoId { get; set; }
-    public ModificarProyectoPage(int proyectoId)
-    {
-        InitializeComponent();
+	TareasViewModel? vm;
+	public int TareaId { get; set; }
+	public ModificarTareaPage(int tareaId)
+	{
+		InitializeComponent();
+		BindingContext = vm = new TareasViewModel();
 
-        BindingContext = vm = new ProyectosViewModel();
+		TareaId = tareaId;
 
-        ProyectoId = proyectoId;
-        BuscarProyectobyId(ProyectoId);
-
-
-    }
+	}
 
     private async void btnCancelar_Clicked(object sender, EventArgs e)
     {
@@ -38,7 +35,8 @@ public partial class ModificarProyectoPage : ContentPage
             gEstado = "I";
         }
 
-        bool R = await vm.VmModificarProyectoAsync(Int32.Parse(TxtIdProyecto.Text),
+        bool R = await vm.VmModificarTareaAsync(Int32.Parse(TxtIdTarea.Text),
+                                                Int32.Parse(TxtIdProyecto.Text),
                                                 TxtNombre.Text,
                                                 TxtDescripcion.Text,
                                                 DateOnly.FromDateTime(DpFechaInicio.Date),
@@ -52,25 +50,25 @@ public partial class ModificarProyectoPage : ContentPage
         else
         {
 
-            await DisplayAlert(":)", "Proyecto modificado Exitosamente", "Ok");
+            await DisplayAlert(":)", "Tarea modificado Exitosamente", "Ok");
             await Navigation.PopAsync();
         }
-
     }
 
-    public async void BuscarProyectobyId(int proyectoId)
+    public async void BuscarProyectobyId(int tareaId)
     {
-        TxtIdProyecto.Text = ProyectoId.ToString();
+        TxtIdProyecto.Text = TareaId.ToString();
         if (vm != null)
         {
-            Proyecto? proyecto = await vm.VmBuscarProyectoByIdAsync(proyectoId);
-            if (proyecto != null)
+            Tarea? tarea = await vm.VmBuscarTareaByIdAsync(tareaId);
+            if (tarea != null)
             {
-                TxtNombre.Text = proyecto.Nombre.ToString();
-                TxtDescripcion.Text = proyecto.Descripcion.ToString();
-                DpFechaInicio.Date = proyecto.FechaInicio.ToDateTime(TimeOnly.MinValue);
-                DpFechaFin.Date = proyecto.FechaFin.ToDateTime(TimeOnly.MinValue);
-                string Estado = proyecto.Estado.ToString();
+                TxtIdProyecto.Text = tarea.ProyectoId.ToString();
+                TxtNombre.Text = tarea.Nombre.ToString();
+                TxtDescripcion.Text = tarea.Descripcion.ToString();
+                DpFechaInicio.Date = tarea.FechaInicio.ToDateTime(TimeOnly.MinValue);
+                DpFechaFin.Date = tarea.FechaFin.ToDateTime(TimeOnly.MinValue);
+                string Estado = tarea.Estado.ToString();
                 if (Estado == "A")
                 {
                     SwEstado.IsToggled = true;
@@ -82,7 +80,7 @@ public partial class ModificarProyectoPage : ContentPage
             }
             else
             {
-                await DisplayAlert(":(", "No se encontro el proyecto", "Ok");
+                await DisplayAlert(":(", "No se encontro el tarea", "Ok");
             }
         }
         else
@@ -90,4 +88,5 @@ public partial class ModificarProyectoPage : ContentPage
             await DisplayAlert(":(", "fuck", "Ok");
         }
     }
+
 }
