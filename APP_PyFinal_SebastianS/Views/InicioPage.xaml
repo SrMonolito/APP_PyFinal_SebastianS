@@ -21,11 +21,11 @@
         Margin="0,10,0,0"
         />
 
-        <Button x:Name="btnTareas" Clicked="btnTareas_Clicked" Text="Roles" 
+        <Button x:Name="btnTareas" Clicked="btnTareas_Clicked" Text="Tareas" 
                 Margin="0,10,0,0"
                  />
 
-        <Button x:Name="btnComentarios" Clicked="btnComentarios_Clicked" Text="Roles" 
+        <Button x:Name="btnComentarios" Clicked="btnComentarios_Clicked" Text="Comentarios" 
                  Margin="0,10,0,0"
                  />
 
