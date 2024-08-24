@@ -9,11 +9,11 @@
 
     <VerticalStackLayout Padding="20,20,20,0" VerticalOptions="StartAndExpand">
 
-        <Entry x:Name="TxtIdProyecto" Placeholder="Ingrese el Identificador del Proyecto"/>
+        <Entry x:Name="TxtIdProyecto" Placeholder="Ingrese el Identificador de la Tarea"/>
 
         <Entry x:Name="TxtNombre" Placeholder="Ingrese el Nombre de la Tarea"/>
 
-        <Editor x:Name="TxtDescripcion" Placeholder="Ingrese la Descripcion del Proyecto"/>
+        <Editor x:Name="TxtDescripcion" Placeholder="Ingrese la Descripcion de la Tarea"/>
 
         <Label Text="Fecha de Inicio" TextColor="Gray"></Label>
         <DatePicker x:Name="DpFechaInicio" TextColor="Gray"/>

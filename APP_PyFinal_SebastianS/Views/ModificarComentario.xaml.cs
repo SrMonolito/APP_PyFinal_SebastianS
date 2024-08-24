@@ -40,7 +40,7 @@ public partial class ModificarComentario : ContentPage
         else
         {
 
-            await DisplayAlert(":)", "MiembroTarea modificado Exitosamente", "Ok");
+            await DisplayAlert(":)", "Comentario modificado Exitosamente", "Ok");
             await Navigation.PopAsync();
         }
     }
@@ -60,7 +60,7 @@ public partial class ModificarComentario : ContentPage
             }
             else
             {
-                await DisplayAlert(":(", "No se encontro el Rol", "Ok");
+                await DisplayAlert(":(", "No se encontro el Comentario", "Ok");
             }
         }
         else

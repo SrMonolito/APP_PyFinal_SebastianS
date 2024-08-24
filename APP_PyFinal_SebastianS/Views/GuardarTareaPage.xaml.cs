@@ -32,7 +32,7 @@ public partial class GuardarTareaPage : ContentPage
             );
         if (R)
         {
-            await DisplayAlert(":)", "Tarea añadido Exitosamente", "Ok");
+            await DisplayAlert(":)", "Tarea añadida Exitosamente", "Ok");
             await Navigation.PopAsync();
         }
         else
