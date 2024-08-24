@@ -25,7 +25,7 @@
 
         </Grid>
 
-        <Label Text="MiembroTarea" TextColor="Black"/>
+        <Label Text="Comentarios" TextColor="Black"/>
 
         <ListView x:Name="ComentarioListView" ItemSelected="ComentarioListView_ItemSelected">
             <ListView.ItemTemplate>

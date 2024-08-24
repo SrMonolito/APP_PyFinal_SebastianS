@@ -8,7 +8,7 @@
 
     <VerticalStackLayout Padding="20,20,20,0" VerticalOptions="StartAndExpand">
 
-        <Entry x:Name="TxtBuscar" Placeholder="Ingrese el id del Rol" 
+        <Entry x:Name="TxtBuscar" Placeholder="Ingrese el id de la Tarea" 
       Keyboard="Numeric" TextColor="Black"/>
 
         <Grid >

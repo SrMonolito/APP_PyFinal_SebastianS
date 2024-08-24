@@ -9,7 +9,7 @@
 
     <VerticalStackLayout Padding="20,20,20,0" VerticalOptions="StartAndExpand">
 
-        <Entry x:Name="TxtIdProyecto" Placeholder="Ingrese el Identificador de la Tarea"/>
+        <Entry x:Name="TxtIdProyecto" Placeholder="Ingrese el Identificador del Proyecto"/>
 
         <Entry x:Name="TxtNombre" Placeholder="Ingrese el Nombre de la Tarea"/>
 

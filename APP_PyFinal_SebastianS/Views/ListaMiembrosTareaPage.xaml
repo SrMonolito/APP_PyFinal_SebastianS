@@ -25,7 +25,7 @@
 
         </Grid>
 
-        <Label Text="MiembroTarea" TextColor="Black"/>
+        <Label Text="Miembros de la Tarea" TextColor="Black"/>
 
         <ListView x:Name="MiembTareaListView" ItemSelected="MiembTareaListView_ItemSelected">
             <ListView.ItemTemplate>

@@ -17,23 +17,23 @@ public partial class InicioPage : ContentPage
         await Navigation.PushAsync(new ListaMiembrosPage());
     }
 
-    private void btnRoles_Clicked(object sender, EventArgs e)
+    private async void btnRoles_Clicked(object sender, EventArgs e)
     {
-
+        await Navigation.PushAsync(new ListaRolPage());
     }
 
-    private void btnTareas_Clicked(object sender, EventArgs e)
+    private async void btnTareas_Clicked(object sender, EventArgs e)
     {
-
+        await Navigation.PushAsync(new ListaTareasPage());
     }
 
-    private void btnComentarios_Clicked(object sender, EventArgs e)
+    private async void btnComentarios_Clicked(object sender, EventArgs e)
     {
-
+        await Navigation.PushAsync(new ListaComentariosPage());
     }
 
-    private void btnMiembrosTarea_Clicked(object sender, EventArgs e)
+    private async void btnMiembrosTarea_Clicked(object sender, EventArgs e)
     {
-
+        await Navigation.PushAsync(new ListaMiembrosTareaPage());
     }
 }
