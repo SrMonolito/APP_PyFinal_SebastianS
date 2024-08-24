@@ -25,7 +25,7 @@ public partial class ListaComentariosPage : ContentPage
         var selectedComentario = e.SelectedItem as Comentario;
         if (selectedComentario != null)
         {
-            await Navigation.PushAsync(new ModificarComentarioPage(selectedComentario.ComentarioId));
+            await Navigation.PushAsync(new ModificarComentario(selectedComentario.ComentarioId));
         }
     }
 
